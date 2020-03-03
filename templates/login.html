@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/loginStyle.css')}}">
+
+<head>
+    <title>IceIceShop</title>
+</head>
+
+<body>
+
+{%if error %}
+  <p><strong> Message: </strong> {{error}}</p>
+{%endif%}
+
+<div class="login-page">
+    <div class="form">
+      <form class="register-form" action="{{ url_for('verify') }}" method="GET">
+        <input type="text" placeholder="First Name" name ="FirstName" required/>
+        <input type="text" placeholder="Last Name" name = "LastName" required/>
+        <input type="text" placeholder="Gender" name = "Gender" required/>
+        <input type="date" placeholder="Birthday" name= "BirthDay" required/>
+        <input type="email" placeholder="Email Address" name ="Email" required/>
+        <input type="text" placeholder="UserName" name= "UserName" required/>
+        <input type="password" placeholder="password" name = "Password" required/>
+        <input type="text" placeholder="Contact" name= "Contacted" required/>
+        <input type="text" placeholder="Address1" name= "Address1" required/>
+        <input type="text" placeholder="Address2" name= "Address2" required/>
+        <input type="text" placeholder="City" name= "City" required/>
+        <input type="text" placeholder="Postal Code" name= "Postal Code" required/>
+        <select name="Country" required>
+          <option value="608">Philippines</option>
+          <option value="392">Japan</option>
+        </select>
+        <input type="submit" id = "submit" />
+        <p class="message">Already registered? <a href="#">Sign In</a></p>
+      </form>
+      <form class="login-form" method="POST" action="{{ url_for('verify') }}">
+        <input type="text" placeholder="Username" name = "username" required/>
+        <input type="password" placeholder="Password" name = "password" required/>
+        <input type="submit" id = "submit"/>
+        <p class="message">Not registered? <a href="#">Create an account</a></p>
+      </form>
+    </div>
+  </div>
+
+
+  <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+  <script>
+    $('.message a').click(function(){
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+  </script>
+</body>
+</html>

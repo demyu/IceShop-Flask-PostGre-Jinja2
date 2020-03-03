@@ -1,0 +1,32 @@
+<Title>GodMode</Title>
+<head>
+    <h1>Add Product</h1>
+</head>
+
+<body>
+    <form action="/insertProduct" method="POST">
+        <label for="img">Select image:</label>
+        <input type="file" id="img" name="img" accept="image/*" required>
+        <br>
+        <input type="text" placeholder="Name" name= "Name" required/>
+        <br>
+        <input type="text" placeholder="Description" name= "Description" required/>
+        <br>
+        <input type="number" placeholder="Price" name= "Price" required/>
+        <br>
+        <input type="number" placeholder="Stock" name="Stock" step="1" min = "1">
+        <br>
+        <input type="text" placeholder="Variation" name= "Variation" required/>
+        <br>
+        <input type="text" placeholder="Brand" name= "Brand" required/>
+        <br>
+        <select name="Category" required>
+            <option value="SmallIce">Small Ice</option>
+            <option value="BigIce">Big Ice</option>
+            <option value="ReallyBigIce">Really Big Ice</option>
+            <option value="ConsumerIce">Consumer Ice</option>
+        </select>
+        <br>
+        <input type="submit" name="Add" value="Add Product">
+    </form>
+</body>
